@@ -1,7 +1,5 @@
 import React from 'react';
-import Home from '../Home';
-import About from '../About';
-import Contact from '../Contact';
+import { Icon } from 'react-native-elements'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeStack from './HomeStack';
 import AboutStack from './AboutStack';
@@ -10,9 +8,25 @@ const Tab = createBottomTabNavigator();
 export default function Navigation() {
     return (
         <Tab.Navigator>
-            <Tab.Screen name="home" component={HomeStack} options={{ title: 'Home' }} />
-            <Tab.Screen name="contact" component={ContactStack} options={{ title: 'Contact' }} />
-            <Tab.Screen name="about" component={AboutStack} options={{ title: 'About' }} />
+            <Tab.Screen name="HomeStack" component={HomeStack} options={{
+                title: 'Dogs', tabBarIcon: () => (
+
+                    <Icon
+                        name='paw-outline'
+                        type='ionicon'
+                    />
+                )
+            }} />
+            <Tab.Screen name="ContactStack" component={ContactStack} options={{
+                title: 'Cats', tabBarIcon: () => (
+
+                    <Icon
+                        name='logo-github'
+                        type='ionicon'
+                    />
+                )
+            }} />
+            {/* <Tab.Screen name="AboutStack" component={AboutStack} options={{ title: 'About' }} /> */}
         </Tab.Navigator>
     );
 }

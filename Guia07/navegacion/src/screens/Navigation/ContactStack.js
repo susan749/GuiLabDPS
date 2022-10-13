@@ -4,9 +4,10 @@ import Contact from '../Contact';
 const Stack = createStackNavigator();
 export default function ContactStack() {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator  screenOptions={{
+            headerShown: false,}}>
             <Stack.Screen name="contact" component={Contact}
-                options={{ title: 'Contact' }} />
+                options={{ title: 'Cats' }} />
         </Stack.Navigator>
     );
 }
